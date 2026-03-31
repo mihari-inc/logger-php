@@ -1,10 +1,10 @@
 {
-    "name": "mihari/mihari-php",
+    "name": "mihari/logger",
     "description": "Log collection and transport library for PHP",
     "type": "library",
     "license": "MIT",
     "keywords": ["logging", "log", "transport", "mihari", "monolog"],
-    "homepage": "https://github.com/mihari/mihari-php",
+    "homepage": "https://github.com/mihari/logger-php",
     "require": {
         "php": ">=8.1",
         "psr/log": "^3.0",

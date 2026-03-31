@@ -1,4 +1,4 @@
-# Mihari PHP
+# Mihari Logger (PHP)
 
 Log collection and transport library for PHP. Sends structured JSON logs to the Mihari API with batching, gzip compression, and automatic retries.
 
@@ -12,7 +12,7 @@ Log collection and transport library for PHP. Sends structured JSON logs to the 
 ## Installation
 
 ```bash
-composer require mihari/mihari-php
+composer require mihari/logger
 ```
 
 ## Quick Start
