@@ -56,43 +56,46 @@ final class Client extends AbstractLogger
     }
 
     /**
+     * PSR-3 impose Stringable|string : restreindre à string casse l'héritage
+     * d'AbstractLogger et fait échouer le chargement de la classe.
+     *
      * @param array<string, mixed> $meta
      */
-    public function info(string $message, array $meta = []): void
+    public function info(string|\Stringable $message, array $meta = []): void
     {
-        $this->sendEntry(LogEntry::LEVEL_INFO, $message, $meta);
+        $this->sendEntry(LogEntry::LEVEL_INFO, (string) $message, $meta);
     }
 
     /**
      * @param array<string, mixed> $meta
      */
-    public function warn(string $message, array $meta = []): void
+    public function warn(string|\Stringable $message, array $meta = []): void
     {
-        $this->sendEntry(LogEntry::LEVEL_WARN, $message, $meta);
+        $this->sendEntry(LogEntry::LEVEL_WARN, (string) $message, $meta);
     }
 
     /**
      * @param array<string, mixed> $meta
      */
-    public function error(string $message, array $meta = []): void
+    public function error(string|\Stringable $message, array $meta = []): void
     {
-        $this->sendEntry(LogEntry::LEVEL_ERROR, $message, $meta);
+        $this->sendEntry(LogEntry::LEVEL_ERROR, (string) $message, $meta);
     }
 
     /**
      * @param array<string, mixed> $meta
      */
-    public function debug(string $message, array $meta = []): void
+    public function debug(string|\Stringable $message, array $meta = []): void
     {
-        $this->sendEntry(LogEntry::LEVEL_DEBUG, $message, $meta);
+        $this->sendEntry(LogEntry::LEVEL_DEBUG, (string) $message, $meta);
     }
 
     /**
      * @param array<string, mixed> $meta
      */
-    public function fatal(string $message, array $meta = []): void
+    public function fatal(string|\Stringable $message, array $meta = []): void
     {
-        $this->sendEntry(LogEntry::LEVEL_FATAL, $message, $meta);
+        $this->sendEntry(LogEntry::LEVEL_FATAL, (string) $message, $meta);
     }
 
     public function flush(): void
